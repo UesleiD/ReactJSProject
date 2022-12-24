@@ -7,12 +7,13 @@ import { getFirestore } from "firebase/firestore";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyCNv6RVU89knCJ7EoNMEEvWXUUW-5gKDZU",
-    authDomain: "atitusgamers.firebaseapp.com",
-    projectId: "atitusgamers",
-    storageBucket: "atitusgamers.appspot.com",
-    messagingSenderId: "632176381820",
-    appId: "1:632176381820:web:e0b52d0c62afd0c950def9"
+    apiKey: "AIzaSyBVqDZby5CckTKXKSowQeCBQ0MT03t4gU0",
+  authDomain: "reactproject-c258f.firebaseapp.com",
+  projectId: "reactproject-c258f",
+  storageBucket: "reactproject-c258f.appspot.com",
+  messagingSenderId: "595434988539",
+  appId: "1:595434988539:web:1cb9b508bee945ffb8215e",
+  measurementId: "G-ZSM0KL0WYT" 
 };
 
 // Initialize Firebase

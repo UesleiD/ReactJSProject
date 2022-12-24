@@ -61,7 +61,7 @@ export default function Login(props) {
       <Grid item xs={12}>
         <div style={{ textAlign: "center" }}>
           <h1>Sejam Bem-Vindos</h1>
-          <h2>ATITUS GAMERS</h2>
+          <h2>STAR WARS</h2>
         </div>
       </Grid>
       <Grid item md={4} xs={12} sm={12}></Grid>
