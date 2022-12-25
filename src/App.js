@@ -1,8 +1,5 @@
 import { useState } from "react";
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
+import {createBrowserRouter,RouterProvider,} from "react-router-dom";
 import Login from "./pages/Login";
 import Menu from "./pages/Menu";
 import './assets/css/estilos.css'
@@ -22,7 +19,6 @@ function App() {
   const verificarLogin = () => {
     setLogin(sessionStorage.getItem("login"))
   }
-
 
   const router = createBrowserRouter([
     {
@@ -65,17 +61,9 @@ function App() {
   ]);
 
 return (
-
-
- 
   <RouterProvider router={router} />
-
 );
 }
-
-
-
-
 
 export default App;
 

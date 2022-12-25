@@ -47,3 +47,25 @@
     cursor: pointer;
     background-color: gray;
 }
+
+.social_box {
+    text-align: center;
+}
+
+img {
+    margin: auto;
+    display: block;
+    width: 200px;
+    border:solid 1px;
+    border-radius:20px;
+}
+
+.titlepage {
+    text-align: center;
+}
+
+.team {
+    background: rgb(63, 94, 251);
+    background: radial-gradient(circle, rgba(63, 94, 251, 1) 0%, rgba(252, 70, 107, 1) 100%);
+    
+}
