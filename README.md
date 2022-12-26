@@ -7,3 +7,6 @@ ueslei123
 
 juliabianchi@gmail.com
 julia123
+
+
+LINK DEPLOY: https://reactproject-c258f.web.app
