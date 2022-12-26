@@ -33,7 +33,7 @@ export default function Cadastro(props) {
 
         try {
             await salvarGamers(dados)
-            alert("Dados Salvos com Sucesso")
+
             navigate('/menu')
 
         } catch (error) {

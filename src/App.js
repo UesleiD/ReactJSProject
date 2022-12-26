@@ -10,6 +10,7 @@ import Peoples from './pages/Peoples'
 import Planets from './pages/Planets'
 import Species from './pages/Species'
 import Sobre from './pages/Sobre'
+import Duvidas from './pages/Duvidas'
 
 
 function App() {
@@ -56,6 +57,10 @@ function App() {
     {
       path: "/Sobre",
       element: Sobre ? <Sobre /> : <Menu/>
+    },
+    {
+      path: "/Duvidas",
+      element: Duvidas ? <Duvidas /> : <Menu/>
     }
 
   ]);

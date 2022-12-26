@@ -1,65 +1,100 @@
-import React, { useState, useEffect } from "react";
-import Input from "./Input";
-import { FormValidations } from "./index.validations";
-import useValidation from "./../../hooks/useValidation";
+import { Button, Grid, TextField } from '@mui/material'
+import React, { useState } from 'react'
+import Cabecalho from '../components/Cabecalho'
+import Rodape from '../components/Rodape'
+import { useNavigate } from 'react-router-dom'
+import MenuOpcoes from '../components/MenuOpcoes'
 
-const initialFormState = {
-  name: "",
-  email: "",
-  password: ""
-};
 
-const UserForm = () => {
-  const [form, setForm] = useState(initialFormState);
-  const { errors } = useValidation(form, FormValidations);
+export default function Duvidas(props) {
+    const navigate = useNavigate();
 
-  function setInput(inputName) {
-    return (e) => {
-      const newValue = { [inputName]: e.target.value };
-      return setForm((form) => ({ ...form, ...newValue }));
-    };
-  }
+    const [nome, setNome] = useState("")
+    const [whatsapp, setWhatsapp] = useState("")
+    const [duvida, setDuvida] = useState("")
 
-  return (
-    <>
-      <h3>Form Controlled</h3>
-      <form>
-        <div className="form-group">
-          <Input
-            name="name"
-            onChange={setInput("name")}
-            label="Name"
-            value={form.name}
-            error={errors.name}
-          />
-        </div>
-        <div className="form-group">
-          <Input
-            name="email"
-            onChange={setInput("email")}
-            label="E-mail"
-            value={form.email}
-            error={errors.email}
-          />
-        </div>
-        <div className="form-group">
-          <Input
-            name="password"
-            onChange={setInput("password")}
-            label="Password"
-            value={form.password}
-            error={errors.password}
-          />
-        </div>
+    const limpar = () => {
+        setNome("")
+        setWhatsapp("")
+        setDuvida("")
+    }
 
-        <div className="form-group">
-          <button type="button" className="btn btn-primary">
-            Submit
-          </button>
-        </div>
-      </form>
-    </>
-  );
-};
+    const salvar = async () => {
 
-export default UserForm;
+
+        const dados = {
+            nome: nome,
+            whatsapp: whatsapp,
+            duvida: duvida
+        }
+
+        try {
+            
+            alert('Salvo com sucesso!')
+            navigate('/menu')
+
+        } catch (error) {
+            alert(error)
+        }
+
+
+    }
+
+    return (
+        <>
+            <Grid container style={{ padding: 10 }}>
+                <Grid item md={12} xs={12} sm={12}>
+                    <Cabecalho />
+                </Grid>
+                <Grid item md={12} xs={12} sm={12}>
+
+                    <MenuOpcoes />
+                    <div className='corpo'>
+                        <Grid container style={{ padding: 10 }} spacing={1}>
+                            <Grid item md={6} xs={12} sm={12}>
+                                <TextField
+                                    fullWidth
+                                    label="Nome"
+                                    variant="outlined"
+                                    value={nome}
+                                    onChange={(e) => setNome(e.target.value)}
+                                />
+                            </Grid>
+                            <Grid item md={6} xs={12} sm={12}>
+                                <TextField
+                                    fullWidth
+                                    label="Whatsapp"
+                                    variant="outlined"
+                                    value={whatsapp}
+                                    onChange={(e) => setWhatsapp(e.target.value)}
+                                />
+                            </Grid>
+                            <Grid item md={6} xs={12} sm={12}>
+                                <TextField
+                                    fullWidth
+                                    label="Dúvida"
+                                    variant="outlined"
+                                    value={duvida}
+                                    onChange={(e) => setDuvida(e.target.value)}
+
+                                />
+                            </Grid>
+                            <Grid item md={12} xs={12} sm={12}>
+                                <Button
+                                    variant="contained"
+                                    style={{ marginRight: 10 }}
+                                    onClick={salvar}
+                                >Enviar</Button>
+                                <Button variant="outlined" onClick={limpar}>Limpar dúvida</Button>
+                            </Grid>
+                        </Grid>
+                    </div>
+                </Grid>
+                <Grid item md={12} xs={12} sm={12}>
+                    <Rodape />
+                </Grid>
+            </Grid>
+        </>
+
+    )
+}
